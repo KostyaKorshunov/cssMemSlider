@@ -9,22 +9,22 @@ body {
 }
 .page {
 	width: 100vw;
-	height: calc(40vw + 200px);
+	height: calc(36vw + 300px);
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
 .slider_cont {
-	position: relative;
+/*	position: relative;	*/
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	display: grid;
 	justify-content: space-between;
 	align-items: center;
-	grid-template-columns: 40px 1fr 1fr 10% 1fr 40px;
-	grid-template-rows: 40px 1fr 1fr 20px 20% 40px;
+	grid-template-columns: 40px 1fr 1fr 10px calc(10% + 140px) 40px;
+	grid-template-rows: 40px 1fr 1fr 40px 20% 40px;
 	grid-template-areas: 	"_l_  _t_  _t_  _t_  _t_  _r_"
 							"_l_  pic  pic  pic  pic  _r_"
 							"_l_  pic  pic  pic  pic  _r_"
@@ -33,53 +33,83 @@ body {
 							"_l_  _b_  _b_  _b_  _b_  _r_";
 }
 .pics {
-	position: relative;
+/*	position: relative;	*/
 	grid-area: pic;
 	width: 100%;
 	height: 100%;
 	justify-self: center;
 	align-self: center;
-	background-color: aqua;
+	background-color: black;
+/*	transform: translateX(0vw);
+	transition: transform 0.5s linear;		*/
 /*	border-radius: 10px;	*/
 }
 .pic_base {
-	position: relative;
-	left: 0px;
+	display: inline-block;
+/*	position: relative;	*/
+/*	left: 0px;		*/
 /*	right: 0px;
 	left: calc(100% - 2px);*/
-	width: 2px;
-	height: 100%;
-	background-color: chocolate;
-}
-.pic_base::after {
-	position: relative;
+/*	width: 2px;	*/
+/*	display: flex;
+	align-items: center;	*/
+/*	width: 100%;	*/
 	width: 100%;
 	height: 100%;
-	background-color: darkorange;
+/*	background-color: chocolate;	*/
+}
+.pic_base0 {
+/*	position: relative;
+	top: 0px;	*/
+/*	width: 0px;	*/
+/*	display: inline-block;	*/
+/*	display: flex;
+	align-items: center;	*/
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;	
+/*	background-color: chocolate;	*/
+}
+.pic_base::after {
+/*	position: relative;	*/
+	width: 100%;
+	height: 100%;
+/*	padding-top: 5px;
+	padding-left: 5px;*/
+/*	margin: 0px auto;	*/
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
 }
 .text_cont {
-	position: relative;
+/*	position: relative;		*/
 	grid-area: txt;
 	width: 100%;
 	height: 100%;
 	justify-self: center;
 	align-self: center;
-	background-color: yellow;
+/*	background-color: yellow;	*/
 }
 .text_base {
-	position: relative;
-	left: 0px;
+/*	position: relative;		*/
+/*	left: 0px;	*/
 /*	right: 0px;	*/
 /*	left: calc(100% - 2px);	*/
-	width: 2px;
-	height: 100%;
-	background-color: chocolate;
-}
-.text_base::after {
-	position: relative;
+	display: flex;
+	align-items: center;
+/*	width: 2px;	*/
 	width: 100%;
 	height: 100%;
-	background-color: darkorange;
+	background-color: chocolate;	
+}
+.text_base::after {
+/*	position: relative;	*/
+	width: 100%;
+	height: 100%;
+	padding-top: 5px;
+	padding-left: 5px;
+/*	transform: translateX(100vw);
+	transition: transform 1.2s ease-out;	*/
 }
 .buttons {
 	grid-area: btn;
@@ -110,65 +140,261 @@ body {
 [name="control"]:checked ~ .buttons label {
 	background-color: hsla(0, 0%, 0%, 0.0);
 }
+.btn:hover .point,
 .point:hover {
 	background-color: hsla(0, 0%, 100%, 0.9);
 	border-color: hsla(0, 0%, 100%, 0.9);
 }
-/**	====	====	====	*/
+/**	====	====	====	====	====	====	====	====	*/
 #btn1:checked ~ .buttons .btn1 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
+/*
+#btn1:checked ~ .pics {
+	transform: translateX(-100vw);
+	transition: transform 0.5s ease-out;
+}*/
+#btn1:checked ~ .pics {
+/*	background: no-repeat center / contain url("../assets/pics/pic_2.png");
+	-webkit-animation-name: img_start_ani;
+	-webkit-animation-duration: 1.25s;
+	animation-fill-mode: forwards;
+	animation-name: img_start_ani;
+	animation-duration: 1.25;	*/
+/*	transform: translateX(0vw);
+	transition: transform 1.2s ease-out;		*/
+}	
+/*
 #btn1:checked ~ .pics .pic_base::after {
-	content: "cont1";
+	background: no-repeat center / contain url("../assets/pics/pic_2.png");
+	content: "";
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}*/
+#btn1:checked ~ .pics .pic_base,
+#btn1:checked ~ .pics .pic_base0 {
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
+}
+#btn1:checked ~ .pics #pic_1 {
+	background: no-repeat center / contain url("../assets/pics/pic_2.png");
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
 }
 #btn1:checked ~ .text_cont .text_base::after {
-	content: "cont1";
+	content: "После стольких лет изучения математики, я нашел квадратный корень";
 }
-/**	====	====	====	*/
+/*
+#btn1:checked ~ .pics .pic_base::after {
+	content: url("../assets/pics/pic_2.png");
+}*/
+/**	====	====	====	====	====	====	====	====	*/
 #btn2:checked ~ .buttons .btn2 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
+/*
+#btn2:checked ~ .pics {
+	transform: translateX(-100vw);
+	transition: transform 0.5s ease-out;
+}*/
+/*#btn2:checked ~ .pics {
+	background: no-repeat center / contain url("../assets/pics/pic_1.png");
+	-webkit-animation-name: img_start_ani;
+	-webkit-animation-duration: 1.25s;
+	animation-name: img_start_ani;
+	animation-duration: 1.25;	*/
+/*	transform: translateX(0vw);
+	transition: transform 1.2s ease-out;	*/
+/*
 #btn2:checked ~ .pics .pic_base::after {
-	content: "cont2";
+	background: no-repeat center / contain url("../assets/pics/pic_1.png");
+	content: "";
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}	*/
+#btn2:checked ~ .pics .pic_base,
+#btn2:checked ~ .pics .pic_base0 {
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
+}
+#btn2:checked ~ .pics #pic_2 {
+	background: no-repeat center / contain url("../assets/pics/pic_1.png");
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
 }
 #btn2:checked ~ .text_cont .text_base::after {
-	content: "cont2";
+	content: "\"ложь\" на разных языках:";
 }
-/**	====	====	====	*/
+/*	#btn2:checked ~ .pics .pic_base::after {
+	content: url("../assets/pics/pic_1.png");
+}	*/
+/**	====	====	====	====	====	====	====	====	*/
 #btn3:checked ~ .buttons .btn3 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
+/*
+#btn3:checked ~ .pics {
+	transform: translateX(-100vw);
+	transition: transform 0.5s ease-out;
+}*/
+/*
+#btn3:checked ~ .pics {
+	background: no-repeat center / contain url("../assets/pics/pic_3.png");
+	-webkit-animation-name: img_start_ani;
+	-webkit-animation-duration: 1.25s;
+	animation-name: img_start_ani;
+	animation-duration: 1.25;*/
+/*	transform: translateX(0vw);
+	transition: transform 1.2s ease-out;	*/
+/*
 #btn3:checked ~ .pics .pic_base::after {
-	content: "cont3";
+	background: no-repeat center / contain url("../assets/pics/pic_3.png");
+	content: "";
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}	*/
+#btn3:checked ~ .pics .pic_base,
+#btn3:checked ~ .pics .pic_base0 {
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
+}
+#btn3:checked ~ .pics #pic_3 {
+	background: no-repeat center / contain url("../assets/pics/pic_3.png");
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
 }
 #btn3:checked ~ .text_cont .text_base::after {
-	content: "cont3";
+	content: "деньги обычно лежат в правом внутреннем кармане, а у правшей - в левом. Если же человек развивает оба полушария, его деньги лежат в швейцарском банке";
 }
-/**	====	====	====	*/
+/*#btn3:checked ~ .pics .pic_base::after {
+	content: "cont3";
+}*/
+/**	====	====	====	====	====	====	====	====	*/
 #btn4:checked ~ .buttons .btn4 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
+/*
+#btn4:checked ~ .pics {
+	transform: translateX(-100vw);
+	transition: transform 0.5s ease-out;
+}*/
+/*#btn4:checked ~ .pics {
+	background: no-repeat center / contain url("../assets/pics/this_days.gif");
+	-webkit-animation-name: img_start_ani;
+	-webkit-animation-duration: 1.25s;
+	animation-name: img_start_ani;
+	animation-duration: 1.25;
+*/
+/*	transform: translateX(0vw);
+	transition: transform 1.2s ease-out;	*/
+/*
+#btn4:checked ~ .pics .pic_base::after {
+	background: no-repeat center / contain url("../assets/pics/this_days.gif");
+	content: "";
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}*/
+#btn4:checked ~ .pics .pic_base,
+#btn4:checked ~ .pics .pic_base0 {
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
+}
+#btn4:checked ~ .pics #pic_4 {
+	background: no-repeat center / contain url("../assets/pics/this_days.gif");
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}
+
+#btn4:checked ~ .text_cont .text_base::after {
+	content: "Ever had one of those days";
+}
+/*
 #btn4:checked ~ .pics .pic_base::after {
 	content: "cont4";
-}
-#btn4:checked ~ .text_cont .text_base::after {
-	content: "cont4";
-}
-/**	====	====	====	*/
+}*/
+/**	====	====	====	====	====	====	====	====	*/
 #btn5:checked ~ .buttons .btn5 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
+/*
+#btn5:checked ~ .pics {
+	transform: translateX(-100vw);
+	transition: transform 0.5s ease-out;
+}*/
+/*
+#btn5:checked ~ .pics {
+	background: no-repeat center / contain url("../assets/pics/strike.gif");
+	-webkit-animation-name: img_start_ani;
+	-webkit-animation-duration: 1.25s;
+	animation-name: img_start_ani;
+	animation-duration: 1.25;	*/
+/*	transform: translateX(0vw);
+	transition: transform 1.2s ease-out;	*/
+#btn5:checked ~ .pics .pic_base,
+#btn5:checked ~ .pics .pic_base0 {
+	width: 0%;
+	height: 0%;
+	transform: translateX(100vw);
+	transition: transform 1.0s ease;
+}
+#btn5:checked ~ .pics #pic_5 {
+	background: no-repeat center / contain url("../assets/pics/strike.gif");
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}
 #btn5:checked ~ .pics .pic_base::after {
-	content: "cont5";
+/*	background: no-repeat center / contain url("../assets/pics/strike.gif");
+	content: "";
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;	*/
 }
 #btn5:checked ~ .text_cont .text_base::after {
-	content: "cont5";
+	content: "Strike!!!";
 }
-/**	====	====	====	*/
+/*
+#btn5:checked ~ .pics .pic_base::after {
+	content: "cont5";
+}	*/
+/**		Operating Systems		*/
+/**	====	====	====	====	====	====	====	====	*/
 /* .btn:active .point .btn:focus .point */
 /*.btn:focus .point {		
 	background-color: hsla(0, 0%, 0%, 0.9);
 }*/
+/*
+.pic_base::after {
+	width: calc(100vw - 80px);
+	background-color: darkorange;
+}*/
+/*.slider_cont:hover .pic_base  {	*/
+/*	content: none;	*/
+/*	background-color: aquamarine;	*/
+/*	content: "";	*/
+/*	content: none;		*/
+/*	transform: translateX(100vw);
+	transition: transform 0.0s ease;
+}	*/
+.pic_base:focus .pic_base::after {
+	content: none;
+}
 [name="control"] {
 	grid-area: _t_;
 	width: 0px;
@@ -176,7 +402,32 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
+@keyframes img_start_ani {
+	from {		margin-left: 0vw;		}
+	1% {		margin-left: 100vw;		}
+	to {		margin-left: 0vw;		}
+}
+@-webkit-keyframes img_start_ani {
+	from {		margin-left: 0vw;		}
+	1% {		margin-left: 100vw;		}
+	to {		margin-left: 0vw;		}
+}
+/*
+@keyframes img_start_ani {
+	from {		transform: translateX(0vw);		}
+	to {		transform: translateX(100vw);		}
+}
+@-webkit-keyframes img_start_ani {
+	from {		transform: translateX(0vw);		}
+	to {		transform: translateX(100vw);		}
+}	*/
 /**	================			Media			================ */
+@media all and (min-width: 	2300px){
+	.page {
+		width: 100vw;
+		height: calc(100vh - 100px);
+	}
+}
 @media all and (max-width: 	640px){
 	.slider_cont {
 		grid-template-columns: 20px repeat(4, 1fr) 20px;
