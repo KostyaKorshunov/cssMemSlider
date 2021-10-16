@@ -1,3 +1,6 @@
+:root {
+	--text_size_normal:		calc(18px + (36 - 18)*((100vw - 640px) / (2300 - 640)));
+}
 html {
 	width: 100vw;
 	height: 100vh;
@@ -95,12 +98,24 @@ body {
 /*	left: 0px;	*/
 /*	right: 0px;	*/
 /*	left: calc(100% - 2px);	*/
-	display: flex;
-	align-items: center;
+/*	display: flex;
+	align-items: center;	*/
 /*	width: 2px;	*/
-	width: 100%;
-	height: 100%;
-	background-color: chocolate;	
+	width: 0%;
+	height: 0%;
+	transform: translateX(-100vw);
+	transition: transform 1.0s ease;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: var(--text_size_normal);
+	color: azure;
+/*	background-color: chocolate;	*/
+}
+#text_5 {
+	animation: infinite;
+	-webkit-animation-name: text_ani;
+	-webkit-animation-duration: 5.25s;
+	animation-name: text_ani;
+	animation-duration: 5.25;
 }
 .text_base::after {
 /*	position: relative;	*/
@@ -185,8 +200,19 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
-#btn1:checked ~ .text_cont .text_base::after {
-	content: "После стольких лет изучения математики, я нашел квадратный корень";
+#btn1:checked ~ .text_cont .text_base {
+	width: 0%;
+	height: 0%;
+	font-size: 1px;
+	transform: translateX(-100vw);
+	transition: transform 0.05s linear;
+}
+#btn1:checked ~ .text_cont #text_1 {
+	width: 100%;
+	height: 100%;
+	font-size: var(--text_size_normal);
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;	
 }
 /*
 #btn1:checked ~ .pics .pic_base::after {
@@ -230,9 +256,24 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
+#btn2:checked ~ .text_cont .text_base {
+	width: 0%;
+	height: 0%;
+	font-size: 1px;
+	transform: translateX(-100vw);
+	transition: transform 0.05s linear;
+}
+#btn2:checked ~ .text_cont #text_2 {
+	width: 100%;
+	height: 100%;
+	font-size: var(--text_size_normal);
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;	
+}
+/*
 #btn2:checked ~ .text_cont .text_base::after {
 	content: "\"ложь\" на разных языках:";
-}
+}*/
 /*	#btn2:checked ~ .pics .pic_base::after {
 	content: url("../assets/pics/pic_1.png");
 }	*/
@@ -275,9 +316,25 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
+#btn3:checked ~ .text_cont .text_base {
+	width: 0%;
+	height: 0%;
+	font-size: 1px;
+	transform: translateX(-100vw);
+	transition: transform 0.05s linear;
+}
+#btn3:checked ~ .text_cont #text_3 {
+	width: 100%;
+	height: 100%;
+	font-size: var(--text_size_normal);
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;
+}
+/*
 #btn3:checked ~ .text_cont .text_base::after {
 	content: "деньги обычно лежат в правом внутреннем кармане, а у правшей - в левом. Если же человек развивает оба полушария, его деньги лежат в швейцарском банке";
 }
+*/
 /*#btn3:checked ~ .pics .pic_base::after {
 	content: "cont3";
 }*/
@@ -320,10 +377,25 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
-
+#btn4:checked ~ .text_cont .text_base {
+	width: 0%;
+	height: 0%;
+	font-size: 1px;
+	transform: translateX(-100vw);
+	transition: transform 0.05s linear;
+}
+#btn4:checked ~ .text_cont #text_4 {
+	width: 100%;
+	height: 100%;
+	font-size: var(--text_size_normal);
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;	
+}
+/*
 #btn4:checked ~ .text_cont .text_base::after {
 	content: "Ever had one of those days";
 }
+*/
 /*
 #btn4:checked ~ .pics .pic_base::after {
 	content: "cont4";
@@ -360,15 +432,28 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
+#btn5:checked ~ .text_cont .text_base {
+	width: 0%;
+	height: 0%;
+	transform: translateX(-100vw);
+	transition: transform 0.05s linear;
+}
+#btn5:checked ~ .text_cont #text_5 {
+	width: 100%;
+	height: 100%;
+	transform: translateX(0vw);
+	transition: transform 1.0s ease;	
+}
 #btn5:checked ~ .pics .pic_base::after {
 /*	background: no-repeat center / contain url("../assets/pics/strike.gif");
 	content: "";
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;	*/
 }
+/*
 #btn5:checked ~ .text_cont .text_base::after {
 	content: "Strike!!!";
-}
+}*/
 /*
 #btn5:checked ~ .pics .pic_base::after {
 	content: "cont5";
@@ -402,15 +487,15 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
-@keyframes img_start_ani {
-	from {		margin-left: 0vw;		}
-	1% {		margin-left: 100vw;		}
-	to {		margin-left: 0vw;		}
+@keyframes text_ani {
+	from {		letter-spacing: 2.0px;		}
+	50% {		margin-left: 50px; letter-spacing: 25.0px;		}
+	to {		letter-spacing: 2.0px;		}
 }
-@-webkit-keyframes img_start_ani {
-	from {		margin-left: 0vw;		}
-	1% {		margin-left: 100vw;		}
-	to {		margin-left: 0vw;		}
+@-webkit-keyframes text_ani {
+	from {		letter-spacing: 2.0px;		}
+	50% {		margin-left: 50px; letter-spacing: 25.0px;		}
+	to {		letter-spacing: 2.0px;		}
 }
 /*
 @keyframes img_start_ani {
