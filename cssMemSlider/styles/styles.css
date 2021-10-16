@@ -1,0 +1,17 @@
+html {
+	width: 100vw;
+	height: 100vh;
+	scroll-behavior: smooth;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+}
+.page {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background-color: yellowgreen;
+}
