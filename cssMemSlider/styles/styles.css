@@ -19,7 +19,6 @@ body {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
 .slider_cont {
-/*	position: relative;	*/
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -36,71 +35,27 @@ body {
 							"_l_  _b_  _b_  _b_  _b_  _r_";
 }
 .pics {
-/*	position: relative;	*/
 	grid-area: pic;
 	width: 100%;
 	height: 100%;
 	justify-self: center;
 	align-self: center;
 	background-color: black;
-/*	transform: translateX(0vw);
-	transition: transform 0.5s linear;		*/
-/*	border-radius: 10px;	*/
-}
-.pic_base {
-	display: inline-block;
-/*	position: relative;	*/
-/*	left: 0px;		*/
-/*	right: 0px;
-	left: calc(100% - 2px);*/
-/*	width: 2px;	*/
-/*	display: flex;
-	align-items: center;	*/
-/*	width: 100%;	*/
-	width: 100%;
-	height: 100%;
-/*	background-color: chocolate;	*/
 }
 .pic_base0 {
-/*	position: relative;
-	top: 0px;	*/
-/*	width: 0px;	*/
-/*	display: inline-block;	*/
-/*	display: flex;
-	align-items: center;	*/
 	width: 0%;
 	height: 0%;
 	transform: translateX(100vw);
 	transition: transform 1.0s ease;	
-/*	background-color: chocolate;	*/
-}
-.pic_base::after {
-/*	position: relative;	*/
-	width: 100%;
-	height: 100%;
-/*	padding-top: 5px;
-	padding-left: 5px;*/
-/*	margin: 0px auto;	*/
-	transform: translateX(100vw);
-	transition: transform 1.0s ease;
 }
 .text_cont {
-/*	position: relative;		*/
 	grid-area: txt;
 	width: 100%;
 	height: 100%;
 	justify-self: center;
 	align-self: center;
-/*	background-color: yellow;	*/
 }
 .text_base {
-/*	position: relative;		*/
-/*	left: 0px;	*/
-/*	right: 0px;	*/
-/*	left: calc(100% - 2px);	*/
-/*	display: flex;
-	align-items: center;	*/
-/*	width: 2px;	*/
 	width: 0%;
 	height: 0%;
 	transform: translateX(-100vw);
@@ -108,7 +63,6 @@ body {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: var(--text_size_normal);
 	color: azure;
-/*	background-color: chocolate;	*/
 }
 #text_5 {
 	animation: infinite;
@@ -117,15 +71,12 @@ body {
 	animation-name: text_ani;
 	animation-duration: 5.25;
 }
-.text_base::after {
-/*	position: relative;	*/
+/*.text_base::after {
 	width: 100%;
 	height: 100%;
 	padding-top: 5px;
 	padding-left: 5px;
-/*	transform: translateX(100vw);
-	transition: transform 1.2s ease-out;	*/
-}
+}*/
 .buttons {
 	grid-area: btn;
 	justify-self: end;
@@ -133,7 +84,6 @@ body {
 	justify-content: space-evenly;
 	width: 210px;
 	height: 100%;
-/*	background-color: cadetblue;	*/
 }
 .btn {
 	width: 32px;
@@ -142,8 +92,6 @@ body {
 	margin: 5px 0px;
 	background-color: hsla(0, 0%, 0%, 0.0);
 	cursor: pointer;
-/*	align-self: center;	*/
-/*	background-color: hsla(0, 0%, 100%, 1.0);	*/
 }
 .point {
 	width: 16px;
@@ -164,28 +112,6 @@ body {
 #btn1:checked ~ .buttons .btn1 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
-/*
-#btn1:checked ~ .pics {
-	transform: translateX(-100vw);
-	transition: transform 0.5s ease-out;
-}*/
-#btn1:checked ~ .pics {
-/*	background: no-repeat center / contain url("../assets/pics/pic_2.png");
-	-webkit-animation-name: img_start_ani;
-	-webkit-animation-duration: 1.25s;
-	animation-fill-mode: forwards;
-	animation-name: img_start_ani;
-	animation-duration: 1.25;	*/
-/*	transform: translateX(0vw);
-	transition: transform 1.2s ease-out;		*/
-}	
-/*
-#btn1:checked ~ .pics .pic_base::after {
-	background: no-repeat center / contain url("../assets/pics/pic_2.png");
-	content: "";
-	transform: translateX(0vw);
-	transition: transform 1.0s ease;
-}*/
 #btn1:checked ~ .pics .pic_base,
 #btn1:checked ~ .pics .pic_base0 {
 	width: 0%;
@@ -214,34 +140,10 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;	
 }
-/*
-#btn1:checked ~ .pics .pic_base::after {
-	content: url("../assets/pics/pic_2.png");
-}*/
 /**	====	====	====	====	====	====	====	====	*/
 #btn2:checked ~ .buttons .btn2 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
-/*
-#btn2:checked ~ .pics {
-	transform: translateX(-100vw);
-	transition: transform 0.5s ease-out;
-}*/
-/*#btn2:checked ~ .pics {
-	background: no-repeat center / contain url("../assets/pics/pic_1.png");
-	-webkit-animation-name: img_start_ani;
-	-webkit-animation-duration: 1.25s;
-	animation-name: img_start_ani;
-	animation-duration: 1.25;	*/
-/*	transform: translateX(0vw);
-	transition: transform 1.2s ease-out;	*/
-/*
-#btn2:checked ~ .pics .pic_base::after {
-	background: no-repeat center / contain url("../assets/pics/pic_1.png");
-	content: "";
-	transform: translateX(0vw);
-	transition: transform 1.0s ease;
-}	*/
 #btn2:checked ~ .pics .pic_base,
 #btn2:checked ~ .pics .pic_base0 {
 	width: 0%;
@@ -270,38 +172,10 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;	
 }
-/*
-#btn2:checked ~ .text_cont .text_base::after {
-	content: "\"ложь\" на разных языках:";
-}*/
-/*	#btn2:checked ~ .pics .pic_base::after {
-	content: url("../assets/pics/pic_1.png");
-}	*/
 /**	====	====	====	====	====	====	====	====	*/
 #btn3:checked ~ .buttons .btn3 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
-/*
-#btn3:checked ~ .pics {
-	transform: translateX(-100vw);
-	transition: transform 0.5s ease-out;
-}*/
-/*
-#btn3:checked ~ .pics {
-	background: no-repeat center / contain url("../assets/pics/pic_3.png");
-	-webkit-animation-name: img_start_ani;
-	-webkit-animation-duration: 1.25s;
-	animation-name: img_start_ani;
-	animation-duration: 1.25;*/
-/*	transform: translateX(0vw);
-	transition: transform 1.2s ease-out;	*/
-/*
-#btn3:checked ~ .pics .pic_base::after {
-	background: no-repeat center / contain url("../assets/pics/pic_3.png");
-	content: "";
-	transform: translateX(0vw);
-	transition: transform 1.0s ease;
-}	*/
 #btn3:checked ~ .pics .pic_base,
 #btn3:checked ~ .pics .pic_base0 {
 	width: 0%;
@@ -330,39 +204,10 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;
 }
-/*
-#btn3:checked ~ .text_cont .text_base::after {
-	content: "деньги обычно лежат в правом внутреннем кармане, а у правшей - в левом. Если же человек развивает оба полушария, его деньги лежат в швейцарском банке";
-}
-*/
-/*#btn3:checked ~ .pics .pic_base::after {
-	content: "cont3";
-}*/
 /**	====	====	====	====	====	====	====	====	*/
 #btn4:checked ~ .buttons .btn4 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
-/*
-#btn4:checked ~ .pics {
-	transform: translateX(-100vw);
-	transition: transform 0.5s ease-out;
-}*/
-/*#btn4:checked ~ .pics {
-	background: no-repeat center / contain url("../assets/pics/this_days.gif");
-	-webkit-animation-name: img_start_ani;
-	-webkit-animation-duration: 1.25s;
-	animation-name: img_start_ani;
-	animation-duration: 1.25;
-*/
-/*	transform: translateX(0vw);
-	transition: transform 1.2s ease-out;	*/
-/*
-#btn4:checked ~ .pics .pic_base::after {
-	background: no-repeat center / contain url("../assets/pics/this_days.gif");
-	content: "";
-	transform: translateX(0vw);
-	transition: transform 1.0s ease;
-}*/
 #btn4:checked ~ .pics .pic_base,
 #btn4:checked ~ .pics .pic_base0 {
 	width: 0%;
@@ -391,33 +236,10 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;	
 }
-/*
-#btn4:checked ~ .text_cont .text_base::after {
-	content: "Ever had one of those days";
-}
-*/
-/*
-#btn4:checked ~ .pics .pic_base::after {
-	content: "cont4";
-}*/
 /**	====	====	====	====	====	====	====	====	*/
 #btn5:checked ~ .buttons .btn5 {
 	background-color: hsla(0, 0%, 0%, 0.9);
 }
-/*
-#btn5:checked ~ .pics {
-	transform: translateX(-100vw);
-	transition: transform 0.5s ease-out;
-}*/
-/*
-#btn5:checked ~ .pics {
-	background: no-repeat center / contain url("../assets/pics/strike.gif");
-	-webkit-animation-name: img_start_ani;
-	-webkit-animation-duration: 1.25s;
-	animation-name: img_start_ani;
-	animation-duration: 1.25;	*/
-/*	transform: translateX(0vw);
-	transition: transform 1.2s ease-out;	*/
 #btn5:checked ~ .pics .pic_base,
 #btn5:checked ~ .pics .pic_base0 {
 	width: 0%;
@@ -444,39 +266,8 @@ body {
 	transform: translateX(0vw);
 	transition: transform 1.0s ease;	
 }
-#btn5:checked ~ .pics .pic_base::after {
-/*	background: no-repeat center / contain url("../assets/pics/strike.gif");
-	content: "";
-	transform: translateX(0vw);
-	transition: transform 1.0s ease;	*/
-}
-/*
-#btn5:checked ~ .text_cont .text_base::after {
-	content: "Strike!!!";
-}*/
-/*
-#btn5:checked ~ .pics .pic_base::after {
-	content: "cont5";
-}	*/
 /**		Operating Systems		*/
 /**	====	====	====	====	====	====	====	====	*/
-/* .btn:active .point .btn:focus .point */
-/*.btn:focus .point {		
-	background-color: hsla(0, 0%, 0%, 0.9);
-}*/
-/*
-.pic_base::after {
-	width: calc(100vw - 80px);
-	background-color: darkorange;
-}*/
-/*.slider_cont:hover .pic_base  {	*/
-/*	content: none;	*/
-/*	background-color: aquamarine;	*/
-/*	content: "";	*/
-/*	content: none;		*/
-/*	transform: translateX(100vw);
-	transition: transform 0.0s ease;
-}	*/
 .pic_base:focus .pic_base::after {
 	content: none;
 }
@@ -497,15 +288,6 @@ body {
 	50% {		margin-left: 50px; letter-spacing: 25.0px;		}
 	to {		letter-spacing: 2.0px;		}
 }
-/*
-@keyframes img_start_ani {
-	from {		transform: translateX(0vw);		}
-	to {		transform: translateX(100vw);		}
-}
-@-webkit-keyframes img_start_ani {
-	from {		transform: translateX(0vw);		}
-	to {		transform: translateX(100vw);		}
-}	*/
 /**	================			Media			================ */
 @media all and (min-width: 	2300px){
 	.page {
